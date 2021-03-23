@@ -4,13 +4,21 @@ body {
     padding: 10;
     /* background-color:darkorchid; */
 }
-image {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 40%;
+
+
+/* div.player {
+    border: solid;
+    background-color: rgba(10, 10, 10, .5);
+} */
+
+.button {
+    background-color: orange;
+    border: solid;
+    border-radius: 10;
 }
 
-div.player {
+.search {
+    /* background-color: hotpink; */
     border: solid;
+    box-shadow: 10px;
 }

@@ -1,51 +1,67 @@
-{% extends 'index.html' %}
-{% block content %}
+{% extends 'index.html' %} {% block content %}
 
 <div class="container pt-2">
     <div class="row">
         <div class="col">
-            <iframe src="https://giphy.com/embed/LMI1sd7Q6MAo0" width="300"
-                height="300" frameBorder="0" class="giphy-embed"
-                allowFullScreen></iframe><p><a
-                    href="https://giphy.com/gifs/nba-golden-state-warriors-los-angeles-clippers-LMI1sd7Q6MAo0"></a></p>
+            <iframe src="https://giphy.com/embed/LMI1sd7Q6MAo0" width="300" height="300" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+            <p>
+                <a href="https://giphy.com/gifs/nba-golden-state-warriors-los-angeles-clippers-LMI1sd7Q6MAo0"></a>
+            </p>
         </div>
         <div class="col-6">
-            <image src="{{ url_for('static', filename='images/logoM.png')}}"
-                width="600" height="400">
-            </div>
-            <div class="col">
-                <iframe src="https://giphy.com/embed/l0OWiMGpoC6apZFXG"
-                    width="300" height="300" frameBorder="0" class="giphy-embed"
-                    allowFullScreen></iframe><p><a
-                        href="https://giphy.com/gifs/afv-funny-fail-lol-l0OWiMGpoC6apZFXG"></a></p>
-            </div>
+            <image src="{{ url_for('static', filename='images/logoM.png')}}" width="600" height="400">
         </div>
-        <div class="row pt-5">
-            <div class="player col-6 d-flex justify-content-center">
-                <form action="/player_result" method="POST">
-                    <input type="text" name="player_name"
-                        placeholder="Enter Player Name">
-                    <input type="submit" value="Submit">
-                </form>
-                </div>
-                <div class="col-6 d-flex justify-content-center">
-                    <form action="/team_result" method="POST">
-                    <input type="text" name="team_name"
-                        placeholder="Enter Team Name">
-                    <input type="submit" value="Submit">
-                </form>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-4">
-                    <h1>How does one Score?</h1>
-                </div>
-                <div class="col-4">
-                    <h1>What is a "Assist"</h1>
-                </div>
-                <div class="col-4">
-                    <h1>What is a "Rebound"</h1>
-                </div>
-            </div>
+        <div class="col">
+            <iframe src="https://giphy.com/embed/l0OWiMGpoC6apZFXG" width="300" height="300" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+            <p>
+                <a href="https://giphy.com/gifs/afv-funny-fail-lol-l0OWiMGpoC6apZFXG"></a>
+            </p>
         </div>
-        {% endblock %}
+    </div>
+
+    <div class="player row pt-2 pb-3 ">
+        <div class=" col-6 d-flex justify-content-center">
+            <form action="/player_result" method="POST">
+                <input class="search" type="text" name="player_name" placeholder="Enter Player Name">
+                <input class="button" type="submit" value="Submit">
+            </form>
+        </div>
+        <div class="col-6 d-flex justify-content-center">
+            <form action="/team_result" method="POST">
+                <input class="search" type="text" name="team_name" placeholder="Enter Team Name">
+                <input class="button" type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-4">
+            <h5 class="d-flex justify-content-center">Point</h5>
+            <p class="d-flex justify-content-center">A point is a shot that is made</p>
+        </div>
+        <div class="col-4">
+            <h5 class="d-flex justify-content-center">Assist</h5>
+            <p>A assist is a pass that is scored by the player who recieved the pass</p>
+        </div>
+        <div class="col-4">
+            <h5 class="d-flex justify-content-center">Rebound</h5>
+            <p>A rebound is whena player retrieves the ball after the shot is missed</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-4">
+            <image src="{{ url_for('static', filename='images/point.png')}}" width="400" height="200">
+        </div>
+        <div class="col-4">
+            <image src="{{ url_for('static', filename='images/assist.jpg')}}" width="400" height="200">
+        </div>
+        <div class="col-4">
+            <image src="{{ url_for('static', filename='images/rebound.webp')}}" width="400" height="200">
+
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

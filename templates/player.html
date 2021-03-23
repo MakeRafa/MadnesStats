@@ -1,14 +1,35 @@
-{% extends 'index.html' %}
-{% block content %}
+{% extends 'index.html' %} {% block content %}
 
-<section>
-    <h1>Player Name: {{first_name}} {{last_name}}</h1>
-    <h1>Position: {{position}}</h1>
-    <h1>Team: {{team_name}}</h1>
-    <h4>Player ID: {{player_id}}</h4>
-    <h1>PPG: {{pts}}</h1>
-    <h1>APG: {{ast}}</h1>
-    <h1>RPG: {{reb}}</h1>
+<section class="pt-3">
+
+    <div style="border: solid;" class="container">
+        <div class="row">
+            <div class="col-5">
+                <h1>Player Name: {{first_name}} {{last_name}}</h1>
+            </div>
+
+            <div class="col-4">
+                <h1>Team: {{team_name}}</h1>
+
+            </div>
+            <div class="col-3">
+                <h1>Position: {{position}}</h1>
+            </div>
+
+            <!-- Force next columns to break to new line at md breakpoint and up -->
+            <div class="w-100 d-none d-md-block"></div>
+
+            <div style="display: flex; justify-content: center;" class="col-4 pt-2">
+                <h1>PPG: {{pts}}</h1>
+            </div>
+            <div style="display: flex; justify-content: center;" class="col-4 pt-2">
+                <h1>APG: {{ast}}</h1>
+            </div>
+            <div style="display: flex; justify-content: center;" class="col-4 pt-2">
+                <h1>RPG: {{reb}}</h1>
+            </div>
+        </div>
+    </div>
 
 </section>
 {% endblock %}
