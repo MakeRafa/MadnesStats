@@ -1,20 +1,7 @@
-<!DOCTYPE html>
+{% extends 'index.html' %}
+{% block content %}
 
-<html lang="en">
+<h1>Hello World</h1>
+<img src="/images/logo.png">
 
-<head>
-    <title>MadnesStats</title>
-    <link rel="stylesheet" href="style.css">
-
-</head>
-<body>
-    <img src="logoM.png" width="200" height="300">
-    {% block content %}
-    {% endblock %}
-
-    <section>
-        <h3>@Rafikimeister</h3>
-    </section>
-    
-</body>
-</html>
+{% endblock %}
