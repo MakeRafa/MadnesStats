@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 API_URL ='https://balldontlie.io/api/v1/players'
 
-@app.route('/')
+@app.route('/home')
 def home():
     """Display the logo and search bars"""
 
