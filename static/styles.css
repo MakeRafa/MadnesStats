@@ -10,3 +10,7 @@ image {
     margin-right: auto;
     width: 40%;
 }
+
+div.player {
+    border: solid;
+}

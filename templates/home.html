@@ -1,7 +1,7 @@
 {% extends 'index.html' %}
 {% block content %}
 
-<div class="container pt-5">
+<div class="container pt-2">
     <div class="row">
         <div class="col">
             <iframe src="https://giphy.com/embed/LMI1sd7Q6MAo0" width="300"
@@ -9,24 +9,40 @@
                 allowFullScreen></iframe><p><a
                     href="https://giphy.com/gifs/nba-golden-state-warriors-los-angeles-clippers-LMI1sd7Q6MAo0"></a></p>
         </div>
-    <div class="col-6">
-        <image src="{{ url_for('static', filename='images/logo.png')}}"
-            width="600" height="250">
-        </div>
-    <div class="col">
-            <iframe src="https://giphy.com/embed/l0OWiMGpoC6apZFXG"
+        <div class="col-6">
+            <image src="{{ url_for('static', filename='images/logoM.png')}}"
+                width="600" height="400">
+            </div>
+            <div class="col">
+                <iframe src="https://giphy.com/embed/l0OWiMGpoC6apZFXG"
                     width="300" height="300" frameBorder="0" class="giphy-embed"
                     allowFullScreen></iframe><p><a
-                    href="https://giphy.com/gifs/afv-funny-fail-lol-l0OWiMGpoC6apZFXG"></a></p>
+                        href="https://giphy.com/gifs/afv-funny-fail-lol-l0OWiMGpoC6apZFXG"></a></p>
+            </div>
         </div>
-    </div>
-</div>
-
-
-    <!-- <form action="/player_result" method="GET">
-        <input type="text" name="player_name" placeholder="Enter PlayerName">
-        <input type="submit" value="Submit">
-        <input type="text" name="player_name" placeholder="Enter Team Name">
-        <input type="submit" value="Submit">
-    </form> -->
-    {% endblock %}
+        <div class="row pt-5">
+            <div class="player col-6 d-flex justify-content-center">
+                <form action="/player_result" method="POST">
+                    <input type="text" name="player_name"
+                        placeholder="Enter Player Name">
+                    <input type="submit" value="Submit">
+                </div>
+                <div class="col-6 d-flex justify-content-center">
+                    <input type="text" name="player_name"
+                        placeholder="Enter Team Name">
+                    <input type="submit" value="Submit">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <h1>How does one Score?</h1>
+                </div>
+                <div class="col-4">
+                    <h1>What is a "Assist"</h1>
+                </div>
+                <div class="col-4">
+                    <h1>What is a "Rebound"</h1>
+                </div>
+            </div>
+        </div>
+        {% endblock %}
