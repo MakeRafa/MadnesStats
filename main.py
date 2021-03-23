@@ -26,29 +26,41 @@ def player_result():
 
     result_json = player_info.json()
 
+    player_stat_info = requests.get('https://balldontlie.io/api/v1/season_averages?player_ids[]='+str(result_json['data'][0]['id'])+'')
+
+    result2_json = player_stat_info.json()
+
+
     context = {
     'first_name': result_json['data'][0]['first_name'],
     'last_name': result_json['data'][0]['last_name'],
     'position': result_json['data'][0]['position'],
-    'team_name': result_json['data'][0]['team']['full_name']
+    'team_name': result_json['data'][0]['team']['full_name'],
+    
+    'player_id': result_json['data'][0]['id'],
 
+    'pts': result2_json['data'][0]['pts'],
+    'ast': result2_json['data'][0]['ast'],
+    'reb': result2_json['data'][0]['reb']
+    
     }
+
+
     return render_template('player.html', **context)
 
-    # params = {
-    #     'id': player_id
-    # }
-    # result_json = requests.get(API_URL, params=params).json()
-    # pp.pprint(result_json)
+# @app.route('/player_stats', methods=['POST'])
+# def player_stats():
 
-    # context = {
-    #     'id': player_id,
-    #     # 'first_name': result_json[first_name],
-    #     # 'last_name': result_json[last_name],
-    #     # 'position': result_json[position]
-    # }
+#     player_id = request.form['players_id']
 
-    # return render_template('player.html', **context)
+#     player_stat_info = requests.get('https://balldontlie.io/api/v1/season_averages?player_ids[]='+player_id+'')
+
+#     json_result = player_stat_info.json()
+
+#     context = {
+#         'pts': json_result['data'][0]['pts']
+#     }
+#     return render_template('stats.html', **context)
 
 if __name__ == '__main__':
 
