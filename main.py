@@ -26,7 +26,7 @@ def player_result():
 
     result_json = player_info.json()
 
-    player_stat_info = requests.get('https://balldontlie.io/api/v1/season_averages?player_ids[]='+str(result_json['data'][0]['id'])+'')
+    player_stat_info = requests.get('https://balldontlie.io/api/v1/season_averages?season=2020&player_ids[]='+str(result_json['data'][0]['id'])+'')
 
     result2_json = player_stat_info.json()
 
